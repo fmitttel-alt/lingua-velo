@@ -38,6 +38,6 @@ enum Config {
     static let enableCyclingMode    = true
     static let enableWakeWord       = true
     static let enableSpacedRep      = true
-    static let enableOfflineSTT     = true
+    static let enableOfflineSTT     = false
     static let maxCyclingSpeed      = 35.0
 }

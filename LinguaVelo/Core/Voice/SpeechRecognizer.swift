@@ -156,7 +156,7 @@ class WakeWordDetector: ObservableObject {
     private func startEngine() throws {
         request = SFSpeechAudioBufferRecognitionRequest()
         guard let request else { return }
-        request.requiresOnDeviceRecognition = true
+        request.requiresOnDeviceRecognition = false
         request.shouldReportPartialResults = true
 
         let inputNode = audioEngine.inputNode
