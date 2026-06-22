@@ -106,10 +106,25 @@ struct Lesson: Identifiable, Codable {
     let level: LanguageLevel
     let category: VocabCategory
     let exercises: [Exercise]
+    let introText: String?
     var isCompleted: Bool = false
     var completionCount: Int = 0
 
     var totalExercises: Int { exercises.count }
+
+    init(id: String, title: String, subtitle: String, level: LanguageLevel,
+         category: VocabCategory, exercises: [Exercise], introText: String? = nil,
+         isCompleted: Bool = false, completionCount: Int = 0) {
+        self.id = id
+        self.title = title
+        self.subtitle = subtitle
+        self.level = level
+        self.category = category
+        self.exercises = exercises
+        self.introText = introText
+        self.isCompleted = isCompleted
+        self.completionCount = completionCount
+    }
 }
 
 // MARK: - Exercise
