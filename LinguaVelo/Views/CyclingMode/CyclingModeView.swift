@@ -327,7 +327,7 @@ struct CyclingSessionView: View {
     private var bottomControls: some View {
         VStack(spacing: AppTheme.Spacing.sm) {
             // Progress
-            ProgressView(value: engine.sessionProgress)
+            ProgressView(value: engine.sessionProgress, total: 1.0)
                 .tint(AppTheme.Colors.salmon)
                 .background(AppTheme.Colors.backgroundElevated)
 

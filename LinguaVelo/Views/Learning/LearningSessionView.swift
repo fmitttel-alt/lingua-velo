@@ -46,7 +46,7 @@ struct LearningSessionView: View {
             }
             .padding(.trailing, AppTheme.Spacing.sm)
 
-            ProgressView(value: engine.sessionProgress)
+            ProgressView(value: engine.sessionProgress, total: 1.0)
                 .tint(AppTheme.Colors.salmon)
                 .frame(maxWidth: .infinity)
 

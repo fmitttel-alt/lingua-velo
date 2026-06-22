@@ -107,7 +107,7 @@ enum TTSError: LocalizedError {
 // MARK: - Tutor Dialogue via Google Gemini API
 
 class TutorDialogue {
-    static let shared = TutorDialogue()
+    nonisolated(unsafe) static let shared = TutorDialogue()
 
     private let session = URLSession.shared
 
