@@ -5,6 +5,7 @@ import AVFoundation
 @main
 struct LinguaVeloApp: App {
     @StateObject private var appState = AppState()
+    @StateObject private var wakeWordDetector = WakeWordDetector()
 
     var body: some Scene {
         WindowGroup {
@@ -16,14 +17,22 @@ struct LinguaVeloApp: App {
                 }
             }
             .environmentObject(appState)
+            .environmentObject(wakeWordDetector)
             .preferredColorScheme(.dark)
-            .onAppear { requestPermissions() }
+            .onAppear {
+                requestPermissions {
+                    wakeWordDetector.start()
+                }
+            }
         }
     }
 
-    private func requestPermissions() {
-        SFSpeechRecognizer.requestAuthorization { _ in }
-        AVAudioApplication.requestRecordPermission { _ in }
+    private func requestPermissions(completion: @escaping () -> Void) {
+        SFSpeechRecognizer.requestAuthorization { _ in
+            AVAudioApplication.requestRecordPermission { _ in
+                DispatchQueue.main.async { completion() }
+            }
+        }
     }
 }
 
