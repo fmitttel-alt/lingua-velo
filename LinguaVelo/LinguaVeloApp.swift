@@ -1,4 +1,6 @@
 import SwiftUI
+import Speech
+import AVFoundation
 
 @main
 struct LinguaVeloApp: App {
@@ -15,7 +17,13 @@ struct LinguaVeloApp: App {
             }
             .environmentObject(appState)
             .preferredColorScheme(.dark)
+            .onAppear { requestPermissions() }
         }
+    }
+
+    private func requestPermissions() {
+        SFSpeechRecognizer.requestAuthorization { _ in }
+        AVAudioApplication.requestRecordPermission { _ in }
     }
 }
 
