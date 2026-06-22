@@ -1,4 +1,4 @@
-import Foundation
+﻿import Foundation
 
 // MARK: - Structured Italian Curriculum (A0 → A2)
 // Organized like a school textbook: Units → Lessons → Exercises
@@ -54,28 +54,28 @@ struct ItalianContent {
             ex(.listenOnly, "Willkommen! Hör die Begrüßungen und lies mit.",
                italian: "Benvenuto! Ascoltiamo i saluti.", answer: "ok"),
             // Core vocab
-            mc("Was bedeutet „Ciao"?", answer: "Hallo / Tschüss",
+            mc("Was bedeutet 'Ciao'?", answer: "Hallo / Tschüss",
                wrong: ["Danke", "Bitte", "Entschuldigung"]),
             repeat_("Ciao", german: "Hallo"),
-            mc("Was bedeutet „Buongiorno"?", answer: "Guten Morgen / Guten Tag",
+            mc("Was bedeutet 'Buongiorno'?", answer: "Guten Morgen / Guten Tag",
                wrong: ["Guten Abend", "Auf Wiedersehen", "Entschuldigung"]),
             repeat_("Buongiorno", german: "Guten Morgen"),
-            mc("Was bedeutet „Buonasera"?", answer: "Guten Abend",
+            mc("Was bedeutet 'Buonasera'?", answer: "Guten Abend",
                wrong: ["Guten Morgen", "Gute Nacht", "Hallo"]),
             repeat_("Buonasera", german: "Guten Abend"),
-            mc("Was bedeutet „Arrivederci"?", answer: "Auf Wiedersehen",
+            mc("Was bedeutet 'Arrivederci'?", answer: "Auf Wiedersehen",
                wrong: ["Hallo", "Danke", "Bitte"]),
             repeat_("Arrivederci", german: "Auf Wiedersehen"),
-            mc("Was bedeutet „Grazie"?", answer: "Danke",
+            mc("Was bedeutet 'Grazie'?", answer: "Danke",
                wrong: ["Bitte", "Hallo", "Entschuldigung"]),
             repeat_("Grazie", german: "Danke"),
-            mc("Was bedeutet „Prego"?", answer: "Bitte / Gern geschehen",
+            mc("Was bedeutet 'Prego'?", answer: "Bitte / Gern geschehen",
                wrong: ["Danke", "Entschuldigung", "Hallo"]),
             repeat_("Prego", german: "Bitte"),
-            mc("Was bedeutet „Scusi"?", answer: "Entschuldigung",
+            mc("Was bedeutet 'Scusi'?", answer: "Entschuldigung",
                wrong: ["Danke", "Bitte", "Guten Morgen"]),
             repeat_("Scusi", german: "Entschuldigung"),
-            mc("Wie sagst du „Wie geht es dir?" auf Italienisch?", answer: "Come stai?",
+            mc("Wie sagst du 'Wie geht es dir?' auf Italienisch?", answer: "Come stai?",
                wrong: ["Chi sei?", "Dove sei?", "Cosa fai?"]),
             repeat_("Come stai?", german: "Wie geht es dir?"),
             mc("Was antwortest du, wenn es dir gut geht?", answer: "Sto bene, grazie!",
@@ -109,13 +109,13 @@ struct ItalianContent {
         let allIT = pairs.map { $0.0 }
         let allDE = pairs.map { $0.1 }
         for (it, de) in pairs {
-            exercises.append(mc("Welche Zahl bedeutet „\(it)"?", answer: de,
+            exercises.append(mc("Welche Zahl bedeutet '\(it)'?", answer: de,
                                 wrong: allDE.filter { $0 != de }.shuffled().prefix(3).map { $0 }))
             exercises.append(repeat_(it, german: de))
         }
-        exercises.append(mc("Wie sagt man „fünf" auf Italienisch?", answer: "cinque",
+        exercises.append(mc("Wie sagt man 'fünf' auf Italienisch?", answer: "cinque",
                             wrong: ["quattro", "sei", "sette"]))
-        exercises.append(mc("Wie sagt man „zehn" auf Italienisch?", answer: "dieci",
+        exercises.append(mc("Wie sagt man 'zehn' auf Italienisch?", answer: "dieci",
                             wrong: ["nove", "sette", "otto"]))
         exercises.append(mc("Uno + due = ?", answer: "tre",
                             wrong: ["quattro", "due", "cinque"]))
@@ -141,7 +141,7 @@ struct ItalianContent {
         ]
         let allDE = colors.map { $0.1 }
         for (it, de) in colors {
-            exercises.append(mc("Was bedeutet „\(it)"?", answer: de,
+            exercises.append(mc("Was bedeutet '\(it)'?", answer: de,
                                 wrong: allDE.filter { $0 != de }.shuffled().prefix(3).map { $0 }))
             exercises.append(repeat_(it, german: de))
         }
@@ -168,17 +168,17 @@ struct ItalianContent {
                wrong: ["la / una", "i / le", "gli / degli"]),
             mc("Was ist der Artikel für ein weibliches Wort (singular)?", answer: "la / una",
                wrong: ["il / un", "i / le", "lo / uno"]),
-            mc("Wie heißt „der Kaffee" auf Italienisch?", answer: "il caffè",
+            mc("Wie heißt 'der Kaffee' auf Italienisch?", answer: "il caffè",
                wrong: ["la caffè", "un caffè", "le caffè"]),
-            mc("Wie heißt „die Pizza" auf Italienisch?", answer: "la pizza",
+            mc("Wie heißt 'die Pizza' auf Italienisch?", answer: "la pizza",
                wrong: ["il pizza", "un pizza", "i pizza"]),
             mc("Was ist der maskuline Pluralartikel?", answer: "i",
                wrong: ["le", "la", "il"]),
             mc("Was ist der feminine Pluralartikel?", answer: "le",
                wrong: ["i", "il", "la"]),
-            mc("„eine Flasche" auf Italienisch?", answer: "una bottiglia",
+            mc("'eine Flasche' auf Italienisch?", answer: "una bottiglia",
                wrong: ["il bottiglia", "un bottiglia", "le bottiglie"]),
-            mc("„ein Fahrrad" — La bici oder Il bici?", answer: "La bici (feminin)",
+            mc("'ein Fahrrad' — La bici oder Il bici?", answer: "La bici (feminin)",
                wrong: ["Il bici (maskulin)", "I bici (Plural)", "Un bici (maskulin)"]),
             repeat_("il ragazzo", german: "der Junge"),
             repeat_("la ragazza", german: "das Mädchen"),
@@ -207,21 +207,21 @@ struct ItalianContent {
                "Die zwei wichtigsten Verben: essere (sein) & avere (haben)\n\nessere: sono / sei / è / siamo / siete / sono\navere: ho / hai / ha / abbiamo / avete / hanno",
                italian: "Essere e avere — i verbi fondamentali.",
                answer: "ok"),
-            mc("„Ich bin" auf Italienisch?", answer: "Sono", wrong: ["Ho", "Sei", "È"]),
-            mc("„Du bist" auf Italienisch?", answer: "Sei", wrong: ["Sono", "È", "Siamo"]),
-            mc("„Er/Sie ist" auf Italienisch?", answer: "È", wrong: ["Sei", "Sono", "Siete"]),
-            mc("„Ich habe" auf Italienisch?", answer: "Ho", wrong: ["Hai", "Ha", "Abbiamo"]),
-            mc("„Du hast" auf Italienisch?", answer: "Hai", wrong: ["Ho", "Ha", "Avete"]),
-            mc("„Er/Sie hat" auf Italienisch?", answer: "Ha", wrong: ["Ho", "Hai", "Hanno"]),
+            mc("'Ich bin' auf Italienisch?", answer: "Sono", wrong: ["Ho", "Sei", "È"]),
+            mc("'Du bist' auf Italienisch?", answer: "Sei", wrong: ["Sono", "È", "Siamo"]),
+            mc("'Er/Sie ist' auf Italienisch?", answer: "È", wrong: ["Sei", "Sono", "Siete"]),
+            mc("'Ich habe' auf Italienisch?", answer: "Ho", wrong: ["Hai", "Ha", "Abbiamo"]),
+            mc("'Du hast' auf Italienisch?", answer: "Hai", wrong: ["Ho", "Ha", "Avete"]),
+            mc("'Er/Sie hat' auf Italienisch?", answer: "Ha", wrong: ["Ho", "Hai", "Hanno"]),
             repeat_("Sono italiano.", german: "Ich bin Italiener."),
             repeat_("Sono tedesco.", german: "Ich bin Deutscher."),
             repeat_("Ho una bici.", german: "Ich habe ein Fahrrad."),
             repeat_("Ha una camera?", german: "Haben Sie ein Zimmer?"),
-            mc("„Wir sind" auf Italienisch?", answer: "Siamo", wrong: ["Sono", "Siete", "Sei"]),
-            mc("„Sie haben" (Plural) auf Italienisch?", answer: "Hanno", wrong: ["Ho", "Ha", "Avete"]),
-            mc("Welcher Satz bedeutet „Ich bin müde"?", answer: "Sono stanco.",
+            mc("'Wir sind' auf Italienisch?", answer: "Siamo", wrong: ["Sono", "Siete", "Sei"]),
+            mc("'Sie haben' (Plural) auf Italienisch?", answer: "Hanno", wrong: ["Ho", "Ha", "Avete"]),
+            mc("Welcher Satz bedeutet 'Ich bin müde'?", answer: "Sono stanco.",
                wrong: ["Ho fame.", "Sei stanco.", "È stanco."]),
-            mc("Welcher Satz bedeutet „Ich habe Hunger"?", answer: "Ho fame.",
+            mc("Welcher Satz bedeutet 'Ich habe Hunger'?", answer: "Ho fame.",
                wrong: ["Sono stanco.", "Hai fame.", "Ha sete."]),
         ]
         return Lesson(
@@ -231,7 +231,7 @@ struct ItalianContent {
             level: .a0,
             category: .phrases,
             exercises: exercises,
-            introText: "„essere" (sein) und „avere" (haben) sind die zwei wichtigsten Verben im Italienischen — sie kommen in fast jedem Satz vor. Ohne diese geht nichts."
+            introText: "'essere' (sein) und 'avere' (haben) sind die zwei wichtigsten Verben im Italienischen — sie kommen in fast jedem Satz vor. Ohne diese geht nichts."
         )
     }
 
@@ -253,7 +253,7 @@ struct ItalianContent {
         ]
         let allDE = pairs.map { $0.1 }
         for (it, de) in pairs {
-            exercises.append(mc("Was bedeutet „\(it)"?", answer: de,
+            exercises.append(mc("Was bedeutet '\(it)'?", answer: de,
                                 wrong: allDE.filter { $0 != de }.shuffled().prefix(3).map { $0 }))
             exercises.append(repeat_(it, german: de))
         }
@@ -286,12 +286,12 @@ struct ItalianContent {
         ]
         let allDE = pairs.map { $0.1 }
         for (it, de) in pairs {
-            exercises.append(mc("Was bedeutet „\(it)"?", answer: de,
+            exercises.append(mc("Was bedeutet '\(it)'?", answer: de,
                                 wrong: allDE.filter { $0 != de }.shuffled().prefix(3).map { $0 }))
         }
         exercises.append(repeat_("venti", german: "20"))
         exercises.append(repeat_("cento", german: "100"))
-        exercises.append(mc("Wie sagt man „55" auf Italienisch?", answer: "cinquantacinque",
+        exercises.append(mc("Wie sagt man '55' auf Italienisch?", answer: "cinquantacinque",
                             wrong: ["sessantacinque", "quarantacinque", "cinquantasei"]))
         exercises.append(mc("Quanti chilometri? — 30 km", answer: "trenta chilometri",
                             wrong: ["venti chilometri", "quaranta chilometri", "tredici chilometri"]))
@@ -302,7 +302,7 @@ struct ItalianContent {
             level: .a1,
             category: .numbers,
             exercises: exercises,
-            introText: "Mit den Zahlen bis 100 kannst du Preise, Distanzen und Mengen verstehen. Wichtig beim Einkaufen, im Restaurant und wenn jemand fragt: „Quanti chilometri?""
+            introText: "Mit den Zahlen bis 100 kannst du Preise, Distanzen und Mengen verstehen. Wichtig beim Einkaufen, im Restaurant und wenn jemand fragt: 'Quanti chilometri?'"
         )
     }
 
@@ -315,12 +315,12 @@ struct ItalianContent {
             ex(.listenOnly,
                "Fragewörter auf Italienisch:\n\nChi? = Wer?\nCosa? / Che? = Was?\nDove? = Wo?\nQuando? = Wann?\nCome? = Wie?\nQuanto/a? = Wie viel?\nPerché? = Warum?",
                italian: "Le parole interrogative.", answer: "ok"),
-            mc("Was bedeutet „Dove?"", answer: "Wo?", wrong: ["Wer?", "Wann?", "Warum?"]),
-            mc("Was bedeutet „Come?"", answer: "Wie?", wrong: ["Wann?", "Wo?", "Was?"]),
-            mc("Was bedeutet „Chi?"", answer: "Wer?", wrong: ["Was?", "Wo?", "Wie?"]),
-            mc("Was bedeutet „Quando?"", answer: "Wann?", wrong: ["Wo?", "Wie viel?", "Warum?"]),
-            mc("Was bedeutet „Quanto?"", answer: "Wie viel?", wrong: ["Wie?", "Wann?", "Wer?"]),
-            mc("Was bedeutet „Perché?"", answer: "Warum?", wrong: ["Wo?", "Wann?", "Was?"]),
+            mc("Was bedeutet 'Dove?'", answer: "Wo?", wrong: ["Wer?", "Wann?", "Warum?"]),
+            mc("Was bedeutet 'Come?'", answer: "Wie?", wrong: ["Wann?", "Wo?", "Was?"]),
+            mc("Was bedeutet 'Chi?'", answer: "Wer?", wrong: ["Was?", "Wo?", "Wie?"]),
+            mc("Was bedeutet 'Quando?'", answer: "Wann?", wrong: ["Wo?", "Wie viel?", "Warum?"]),
+            mc("Was bedeutet 'Quanto?'", answer: "Wie viel?", wrong: ["Wie?", "Wann?", "Wer?"]),
+            mc("Was bedeutet 'Perché?'", answer: "Warum?", wrong: ["Wo?", "Wann?", "Was?"]),
             repeat_("Dove sei?", german: "Wo bist du?"),
             repeat_("Come stai?", german: "Wie geht es dir?"),
             repeat_("Chi sei?", german: "Wer bist du?"),
@@ -330,10 +330,10 @@ struct ItalianContent {
                wrong: ["Dove vai?", "Come stai?", "Chi sei?"]),
             mc("Wie fragst du nach dem Weg?", answer: "Dove si trova...?",
                wrong: ["Quanto costa?", "Come ti chiami?", "Quando apre?"]),
-            mc("„Warum?" auf Italienisch?", answer: "Perché?",
+            mc("'Warum?' auf Italienisch?", answer: "Perché?",
                wrong: ["Come mai?", "Cosa?", "Quando?"]),
             ex(.listenOnly,
-               "Satzstruktur von Fragen:\n\nIm Italienischen kannst du Fragen oft durch Tonfall bilden — wie im Deutschen:\n„Vai a Roma?" = „Du fährst nach Rom?"\nOder umstellen: „Quando vai a Roma?"",
+               "Satzstruktur von Fragen:\n\nIm Italienischen kannst du Fragen oft durch Tonfall bilden — wie im Deutschen:\n'Vai a Roma?' = 'Du fährst nach Rom?'\nOder umstellen: 'Quando vai a Roma?'",
                italian: "La struttura della domanda.",
                answer: "ok"),
         ]
@@ -344,7 +344,7 @@ struct ItalianContent {
             level: .a1,
             category: .phrases,
             exercises: exercises,
-            introText: "Mit den Fragewörtern kannst du jede Information erfragen. „Dove?" ist vielleicht das nützlichste Wort auf Reisen — du wirst es ständig brauchen."
+            introText: "Mit den Fragewörtern kannst du jede Information erfragen. 'Dove?' ist vielleicht das nützlichste Wort auf Reisen — du wirst es ständig brauchen."
         )
     }
 
@@ -365,12 +365,12 @@ struct ItalianContent {
         ]
         let allDaysDE = days.map { $0.1 }
         for (it, de) in days {
-            exercises.append(mc("Was bedeutet „\(it)"?", answer: de,
+            exercises.append(mc("Was bedeutet '\(it)'?", answer: de,
                                 wrong: allDaysDE.filter { $0 != de }.shuffled().prefix(3).map { $0 }))
         }
         let allMonthsDE = months.map { $0.1 }
         for (it, de) in months {
-            exercises.append(mc("Was bedeutet „\(it)"?", answer: de,
+            exercises.append(mc("Was bedeutet '\(it)'?", answer: de,
                                 wrong: allMonthsDE.filter { $0 != de }.shuffled().prefix(3).map { $0 }))
         }
         exercises.append(repeat_("Che giorno è oggi?", german: "Welcher Tag ist heute?"))
@@ -394,18 +394,18 @@ struct ItalianContent {
                answer: "ok"),
             mc("Wie fragst du nach der Uhrzeit?", answer: "Che ore sono?",
                wrong: ["Che giorno è?", "Come stai?", "Dove sei?"]),
-            mc("„Es ist 3 Uhr" auf Italienisch?", answer: "Sono le tre.",
+            mc("'Es ist 3 Uhr' auf Italienisch?", answer: "Sono le tre.",
                wrong: ["È le tre.", "Sono tre.", "Sono le tré."]),
-            mc("„Es ist 1 Uhr" — Sono le uno oder È l'una?", answer: "È l'una.",
+            mc("'Es ist 1 Uhr' — Sono le uno oder È l'una?", answer: "È l'una.",
                wrong: ["Sono le uno.", "Sono l'uno.", "È le una."]),
-            mc("„halb" auf Italienisch?", answer: "mezza",
+            mc("'halb' auf Italienisch?", answer: "mezza",
                wrong: ["mezzo", "metà", "mezzogiorno"]),
             repeat_("Che ore sono?", german: "Wie viel Uhr ist es?"),
             repeat_("Sono le otto e mezza.", german: "Es ist halb neun."),
             repeat_("A che ora parte?", german: "Um wie viel Uhr fährt es ab?"),
-            mc("Wie sagt man „Es ist Mittag"?", answer: "È mezzogiorno.",
+            mc("Wie sagt man 'Es ist Mittag'?", answer: "È mezzogiorno.",
                wrong: ["È mezzanotte.", "Sono le dodici e mezza.", "È l'una."]),
-            mc("„Am Morgen" auf Italienisch?", answer: "di mattina",
+            mc("'Am Morgen' auf Italienisch?", answer: "di mattina",
                wrong: ["di sera", "di notte", "di pomeriggio"]),
             repeat_("Apre alle nove di mattina.", german: "Es öffnet um 9 Uhr morgens."),
         ]
@@ -427,25 +427,25 @@ struct ItalianContent {
     private static func lessonDirections() -> Lesson {
         let exercises: [Exercise] = [
             ex(.listenOnly, "Wegbeschreibungen auf Italienisch.", italian: "Le direzioni.", answer: "ok"),
-            mc("„Wo ist…?" auf Italienisch?", answer: "Dov'è…?",
+            mc("'Wo ist…?' auf Italienisch?", answer: "Dov'è…?",
                wrong: ["Cos'è…?", "Chi è…?", "Com'è…?"]),
-            mc("„nach rechts" auf Italienisch?", answer: "a destra",
+            mc("'nach rechts' auf Italienisch?", answer: "a destra",
                wrong: ["a sinistra", "dritto", "indietro"]),
-            mc("„nach links" auf Italienisch?", answer: "a sinistra",
+            mc("'nach links' auf Italienisch?", answer: "a sinistra",
                wrong: ["a destra", "dritto", "in fondo"]),
-            mc("„geradeaus" auf Italienisch?", answer: "sempre dritto",
+            mc("'geradeaus' auf Italienisch?", answer: "sempre dritto",
                wrong: ["a sinistra", "a destra", "indietro"]),
             repeat_("Dov'è la stazione?", german: "Wo ist der Bahnhof?"),
             repeat_("Giri a destra.", german: "Biegen Sie rechts ab."),
             repeat_("Vada sempre dritto.", german: "Fahren Sie immer geradeaus."),
-            mc("Was bedeutet „al semaforo"?", answer: "an der Ampel",
+            mc("Was bedeutet 'al semaforo'?", answer: "an der Ampel",
                wrong: ["am Bahnhof", "an der Kreuzung", "am Ende"]),
-            mc("Was bedeutet „all'incrocio"?", answer: "an der Kreuzung",
+            mc("Was bedeutet 'all'incrocio'?", answer: "an der Kreuzung",
                wrong: ["an der Ampel", "am Bahnhof", "in der Mitte"]),
             repeat_("Al semaforo, giri a sinistra.", german: "An der Ampel links abbiegen."),
-            mc("„in der Nähe" auf Italienisch?", answer: "vicino",
+            mc("'in der Nähe' auf Italienisch?", answer: "vicino",
                wrong: ["lontano", "in fondo", "accanto"]),
-            mc("„weit weg" auf Italienisch?", answer: "lontano",
+            mc("'weit weg' auf Italienisch?", answer: "lontano",
                wrong: ["vicino", "accanto", "dietro"]),
             repeat_("È vicino?", german: "Ist es in der Nähe?"),
             repeat_("Quanti chilometri mancano?", german: "Wie viele Kilometer fehlen noch?"),
@@ -457,7 +457,7 @@ struct ItalianContent {
             level: .a1,
             category: .directions,
             exercises: exercises,
-            introText: "„Dov'è…?" ist einer der nützlichsten Sätze auf Reisen. Mit dieser Lektion findest du immer deinen Weg — auch ohne GPS."
+            introText: "'Dov'è…?' ist einer der nützlichsten Sätze auf Reisen. Mit dieser Lektion findest du immer deinen Weg — auch ohne GPS."
         )
     }
 
@@ -467,22 +467,22 @@ struct ItalianContent {
                "Präpositionen — kleine Wörter, große Wirkung:\n\ndi = von / aus\na = nach / zu / an\nda = von (Herkunft) / seit\nin = in / nach\ncon = mit\nsu = auf\nper = für / durch\ntra/fra = zwischen / in (Zeit)",
                italian: "Le preposizioni italiane.",
                answer: "ok"),
-            mc("„mit" auf Italienisch?", answer: "con",
+            mc("'mit' auf Italienisch?", answer: "con",
                wrong: ["di", "per", "su"]),
-            mc("„für" auf Italienisch?", answer: "per",
+            mc("'für' auf Italienisch?", answer: "per",
                wrong: ["con", "di", "da"]),
-            mc("„auf" auf Italienisch?", answer: "su",
+            mc("'auf' auf Italienisch?", answer: "su",
                wrong: ["in", "a", "per"]),
-            mc("„von / aus" auf Italienisch?", answer: "di",
+            mc("'von / aus' auf Italienisch?", answer: "di",
                wrong: ["da", "a", "con"]),
-            mc("„nach / zu" auf Italienisch?", answer: "a",
+            mc("'nach / zu' auf Italienisch?", answer: "a",
                wrong: ["in", "da", "per"]),
             repeat_("Vengo da Monaco.", german: "Ich komme aus München."),
             repeat_("Vado a Roma.", german: "Ich fahre nach Rom."),
             repeat_("La bici è su per la salita.", german: "Das Fahrrad ist den Berg hoch."),
-            mc("„in 10 Minuten" auf Italienisch?", answer: "tra dieci minuti",
+            mc("'in 10 Minuten' auf Italienisch?", answer: "tra dieci minuti",
                wrong: ["per dieci minuti", "di dieci minuti", "con dieci minuti"]),
-            mc("„auf dem Tisch" auf Italienisch?", answer: "sul tavolo",
+            mc("'auf dem Tisch' auf Italienisch?", answer: "sul tavolo",
                wrong: ["nel tavolo", "al tavolo", "del tavolo"]),
             repeat_("Ho bisogno di aiuto.", german: "Ich brauche Hilfe."),
             repeat_("Sono qui per due giorni.", german: "Ich bin für zwei Tage hier."),
@@ -498,27 +498,27 @@ struct ItalianContent {
             level: .a1,
             category: .phrases,
             exercises: exercises,
-            introText: "Präpositionen verbinden Satzteile. Ohne „con", „per", „di" und „a" klingt kein Satz richtig. Diese Lektion erklärt die wichtigsten — mit praktischen Beispielen."
+            introText: "Präpositionen verbinden Satzteile. Ohne 'con', 'per', 'di' und 'a' klingt kein Satz richtig. Diese Lektion erklärt die wichtigsten — mit praktischen Beispielen."
         )
     }
 
     private static func lessonTransport() -> Lesson {
         let exercises: [Exercise] = [
             ex(.listenOnly, "Transportmittel und Reisen.", italian: "I mezzi di trasporto.", answer: "ok"),
-            mc("„der Zug" auf Italienisch?", answer: "il treno",
+            mc("'der Zug' auf Italienisch?", answer: "il treno",
                wrong: ["il bus", "la macchina", "l'aereo"]),
-            mc("„das Flugzeug" auf Italienisch?", answer: "l'aereo",
+            mc("'das Flugzeug' auf Italienisch?", answer: "l'aereo",
                wrong: ["il treno", "il bus", "la nave"]),
-            mc("„der Bus" auf Italienisch?", answer: "il bus / l'autobus",
+            mc("'der Bus' auf Italienisch?", answer: "il bus / l'autobus",
                wrong: ["il treno", "la metro", "il tram"]),
-            mc("„das Auto" auf Italienisch?", answer: "la macchina / l'auto",
+            mc("'das Auto' auf Italienisch?", answer: "la macchina / l'auto",
                wrong: ["il treno", "il bus", "la moto"]),
             repeat_("Un biglietto per Roma, per favore.", german: "Eine Fahrkarte nach Rom, bitte."),
             repeat_("A che ora parte il treno?", german: "Um wie viel Uhr fährt der Zug ab?"),
             repeat_("Dov'è la stazione dei treni?", german: "Wo ist der Bahnhof?"),
-            mc("„der Bahnsteig" auf Italienisch?", answer: "il binario",
+            mc("'der Bahnsteig' auf Italienisch?", answer: "il binario",
                wrong: ["la fermata", "il treno", "il biglietto"]),
-            mc("„die Fahrkarte" auf Italienisch?", answer: "il biglietto",
+            mc("'die Fahrkarte' auf Italienisch?", answer: "il biglietto",
                wrong: ["il binario", "la stazione", "l'orario"]),
             repeat_("È in ritardo?", german: "Hat es Verspätung?"),
             repeat_("Dov'è la fermata dell'autobus?", german: "Wo ist die Bushaltestelle?"),
@@ -530,7 +530,7 @@ struct ItalianContent {
             level: .a1,
             category: .directions,
             exercises: exercises,
-            introText: "Züge, Busse, Tickets — damit kommst du in Italien überall hin. „Un biglietto, per favore" ist einer der wichtigsten Sätze für Reisende."
+            introText: "Züge, Busse, Tickets — damit kommst du in Italien überall hin. 'Un biglietto, per favore' ist einer der wichtigsten Sätze für Reisende."
         )
     }
 
@@ -541,24 +541,24 @@ struct ItalianContent {
     private static func lessonCafe() -> Lesson {
         let exercises: [Exercise] = [
             ex(.listenOnly, "Im Café bestellen.", italian: "Al bar.", answer: "ok"),
-            mc("„einen Kaffee, bitte" auf Italienisch?", answer: "Un caffè, per favore.",
+            mc("'einen Kaffee, bitte' auf Italienisch?", answer: "Un caffè, per favore.",
                wrong: ["Un tè, per favore.", "Un succo, per favore.", "Una birra, per favore."]),
             repeat_("Un caffè, per favore.", german: "Einen Kaffee, bitte."),
-            mc("Was ist ein „cappuccino"?", answer: "Kaffee mit aufgeschäumter Milch",
+            mc("Was ist ein 'cappuccino'?", answer: "Kaffee mit aufgeschäumter Milch",
                wrong: ["Starker Espresso", "Kaffee mit Eis", "Kaffee mit Sahne"]),
             repeat_("Un cappuccino e un cornetto.", german: "Einen Cappuccino und ein Croissant."),
-            mc("„Wasser" auf Italienisch?", answer: "l'acqua",
+            mc("'Wasser' auf Italienisch?", answer: "l'acqua",
                wrong: ["il vino", "il succo", "il latte"]),
-            mc("„Sprudelwasser" auf Italienisch?", answer: "acqua frizzante",
+            mc("'Sprudelwasser' auf Italienisch?", answer: "acqua frizzante",
                wrong: ["acqua naturale", "acqua calda", "acqua fredda"]),
             repeat_("Un litro d'acqua frizzante.", german: "Ein Liter Sprudelwasser."),
-            mc("„die Rechnung" auf Italienisch?", answer: "il conto",
+            mc("'die Rechnung' auf Italienisch?", answer: "il conto",
                wrong: ["il menù", "il piatto", "il prezzo"]),
             repeat_("Il conto, per favore.", german: "Die Rechnung, bitte."),
             mc("Wie rufst du den Kellner?", answer: "Scusi!",
                wrong: ["Prego!", "Grazie!", "Aiuto!"]),
             repeat_("Scusi, posso avere il menù?", german: "Entschuldigung, kann ich die Speisekarte haben?"),
-            mc("„Ich nehme…" auf Italienisch?", answer: "Prendo…",
+            mc("'Ich nehme…' auf Italienisch?", answer: "Prendo…",
                wrong: ["Voglio…", "Ho…", "Sono…"]),
             repeat_("Prendo la pizza margherita.", german: "Ich nehme die Margherita-Pizza."),
         ]
@@ -577,23 +577,23 @@ struct ItalianContent {
         let exercises: [Exercise] = [
             ex(.listenOnly, "Im Restaurant.", italian: "Al ristorante.", answer: "ok"),
             repeat_("Buonasera, ho una prenotazione.", german: "Guten Abend, ich habe eine Reservierung."),
-            mc("„einen Tisch für zwei" auf Italienisch?", answer: "un tavolo per due",
+            mc("'einen Tisch für zwei' auf Italienisch?", answer: "un tavolo per due",
                wrong: ["un tavolo per uno", "due tavoli", "un posto"]),
             repeat_("Un tavolo per due, per favore.", german: "Einen Tisch für zwei, bitte."),
-            mc("„der Vorspeise" auf Italienisch?", answer: "l'antipasto",
+            mc("'der Vorspeise' auf Italienisch?", answer: "l'antipasto",
                wrong: ["il primo", "il secondo", "il dolce"]),
-            mc("„das Hauptgericht" (Pasta/Suppe) auf Italienisch?", answer: "il primo",
+            mc("'das Hauptgericht' (Pasta/Suppe) auf Italienisch?", answer: "il primo",
                wrong: ["il secondo", "l'antipasto", "il contorno"]),
-            mc("„das Hauptgericht" (Fleisch/Fisch) auf Italienisch?", answer: "il secondo",
+            mc("'das Hauptgericht' (Fleisch/Fisch) auf Italienisch?", answer: "il secondo",
                wrong: ["il primo", "l'antipasto", "il dolce"]),
-            mc("„die Nachspeise" auf Italienisch?", answer: "il dolce / il dessert",
+            mc("'die Nachspeise' auf Italienisch?", answer: "il dolce / il dessert",
                wrong: ["il secondo", "il contorno", "l'antipasto"]),
             repeat_("Cosa mi consiglia?", german: "Was empfehlen Sie mir?"),
-            mc("Wie sagst du „Ich bin Vegetarier"?", answer: "Sono vegetariano/a.",
+            mc("Wie sagst du 'Ich bin Vegetarier'?", answer: "Sono vegetariano/a.",
                wrong: ["Non mangio carne.", "Ho fame.", "Sono stanco."]),
             repeat_("Sono allergico alle noci.", german: "Ich bin allergisch gegen Nüsse."),
             repeat_("Era ottimo, grazie!", german: "Es war ausgezeichnet, danke!"),
-            mc("Was bedeutet „senza glutine"?", answer: "glutenfrei",
+            mc("Was bedeutet 'senza glutine'?", answer: "glutenfrei",
                wrong: ["laktosefrei", "vegan", "scharf"]),
         ]
         return Lesson(
@@ -610,17 +610,17 @@ struct ItalianContent {
     private static func lessonAccommodation() -> Lesson {
         let exercises: [Exercise] = [
             ex(.listenOnly, "Im Hotel.", italian: "All'albergo.", answer: "ok"),
-            mc("„ein Zimmer" auf Italienisch?", answer: "una camera",
+            mc("'ein Zimmer' auf Italienisch?", answer: "una camera",
                wrong: ["una stanza", "un posto", "un appartamento"]),
-            mc("„Einzelzimmer" auf Italienisch?", answer: "camera singola",
+            mc("'Einzelzimmer' auf Italienisch?", answer: "camera singola",
                wrong: ["camera doppia", "camera matrimoniale", "camera tripla"]),
-            mc("„Doppelzimmer" auf Italienisch?", answer: "camera doppia / matrimoniale",
+            mc("'Doppelzimmer' auf Italienisch?", answer: "camera doppia / matrimoniale",
                wrong: ["camera singola", "camera tripla", "camera con vista"]),
             repeat_("Vorrei una camera singola per due notti.", german: "Ich hätte gerne ein Einzelzimmer für zwei Nächte."),
-            mc("„Frühstück" auf Italienisch?", answer: "la colazione",
+            mc("'Frühstück' auf Italienisch?", answer: "la colazione",
                wrong: ["il pranzo", "la cena", "lo spuntino"]),
             repeat_("La colazione è inclusa?", german: "Ist das Frühstück inbegriffen?"),
-            mc("„Schlüssel" auf Italienisch?", answer: "la chiave",
+            mc("'Schlüssel' auf Italienisch?", answer: "la chiave",
                wrong: ["il conto", "la camera", "il documento"]),
             repeat_("A che ora è il check-out?", german: "Um wie viel Uhr ist der Check-out?"),
             mc("Wie fragst du nach WLAN?", answer: "C'è il Wi-Fi?",
@@ -646,26 +646,26 @@ struct ItalianContent {
     private static func lessonCycling() -> Lesson {
         let exercises: [Exercise] = [
             ex(.listenOnly, "Alles rund ums Radfahren.", italian: "In bici!", answer: "ok"),
-            mc("„Fahrrad" auf Italienisch?", answer: "la bicicletta / la bici",
+            mc("'Fahrrad' auf Italienisch?", answer: "la bicicletta / la bici",
                wrong: ["la moto", "la macchina", "lo scooter"]),
-            mc("„Reifenpanne" auf Italienisch?", answer: "una foratura",
+            mc("'Reifenpanne' auf Italienisch?", answer: "una foratura",
                wrong: ["una caduta", "un guasto", "una perdita"]),
             repeat_("Ho una foratura!", german: "Ich habe eine Reifenpanne!"),
-            mc("„Fahrradpumpe" auf Italienisch?", answer: "la pompa",
+            mc("'Fahrradpumpe' auf Italienisch?", answer: "la pompa",
                wrong: ["il gonfiatore", "il casco", "il cambio"]),
             repeat_("Ha una pompa per le bici?", german: "Haben Sie eine Fahrradpumpe?"),
-            mc("„Fahrradladen" auf Italienisch?", answer: "il negozio di biciclette",
+            mc("'Fahrradladen' auf Italienisch?", answer: "il negozio di biciclette",
                wrong: ["la farmacia", "il meccanico", "la stazione"]),
             repeat_("C'è un negozio di biciclette vicino?", german: "Gibt es einen Fahrradladen in der Nähe?"),
-            mc("„die Steigung / der Pass" auf Italienisch?", answer: "la salita / il passo",
+            mc("'die Steigung / der Pass' auf Italienisch?", answer: "la salita / il passo",
                wrong: ["la discesa", "il pianoro", "la valle"]),
-            mc("„die Abfahrt" auf Italienisch?", answer: "la discesa",
+            mc("'die Abfahrt' auf Italienisch?", answer: "la discesa",
                wrong: ["la salita", "il passo", "la curva"]),
             repeat_("Quanti chilometri mancano al paese?", german: "Wie viele Kilometer bis zum Ort?"),
-            mc("„der Radweg" auf Italienisch?", answer: "la pista ciclabile",
+            mc("'der Radweg' auf Italienisch?", answer: "la pista ciclabile",
                wrong: ["la strada", "il sentiero", "il vialetto"]),
             repeat_("C'è una pista ciclabile?", german: "Gibt es einen Radweg?"),
-            mc("„Helm" auf Italienisch?", answer: "il casco",
+            mc("'Helm' auf Italienisch?", answer: "il casco",
                wrong: ["la pompa", "i guanti", "gli occhiali"]),
             repeat_("Attenzione in discesa!", german: "Vorsicht bei der Abfahrt!"),
             repeat_("Sto cercando un'officina.", german: "Ich suche eine Werkstatt."),
@@ -684,24 +684,24 @@ struct ItalianContent {
     private static func lessonWeather() -> Lesson {
         let exercises: [Exercise] = [
             ex(.listenOnly, "Das Wetter auf Italienisch.", italian: "Il tempo.", answer: "ok"),
-            mc("„Wie ist das Wetter?" auf Italienisch?", answer: "Che tempo fa?",
+            mc("'Wie ist das Wetter?' auf Italienisch?", answer: "Che tempo fa?",
                wrong: ["Che ore sono?", "Come stai?", "Dove sei?"]),
             repeat_("Che tempo fa oggi?", german: "Wie ist das Wetter heute?"),
-            mc("„Es regnet" auf Italienisch?", answer: "Piove.",
+            mc("'Es regnet' auf Italienisch?", answer: "Piove.",
                wrong: ["Nevica.", "C'è vento.", "Fa caldo."]),
-            mc("„Es schneit" auf Italienisch?", answer: "Nevica.",
+            mc("'Es schneit' auf Italienisch?", answer: "Nevica.",
                wrong: ["Piove.", "Fa freddo.", "C'è nebbia."]),
-            mc("„Es ist heiß" auf Italienisch?", answer: "Fa caldo.",
+            mc("'Es ist heiß' auf Italienisch?", answer: "Fa caldo.",
                wrong: ["Fa freddo.", "C'è sole.", "È nuvoloso."]),
-            mc("„Es ist kalt" auf Italienisch?", answer: "Fa freddo.",
+            mc("'Es ist kalt' auf Italienisch?", answer: "Fa freddo.",
                wrong: ["Fa caldo.", "C'è vento.", "Piove."]),
             repeat_("C'è molto vento oggi.", german: "Heute ist es sehr windig."),
-            mc("„die Sonne" auf Italienisch?", answer: "il sole",
+            mc("'die Sonne' auf Italienisch?", answer: "il sole",
                wrong: ["la pioggia", "il vento", "la neve"]),
-            mc("„der Regen" auf Italienisch?", answer: "la pioggia",
+            mc("'der Regen' auf Italienisch?", answer: "la pioggia",
                wrong: ["il sole", "il vento", "la neve"]),
             repeat_("Domani pioverà?", german: "Wird es morgen regnen?"),
-            mc("Was bedeutet „temporale"?", answer: "Gewitter",
+            mc("Was bedeutet 'temporale'?", answer: "Gewitter",
                wrong: ["Nebel", "Schnee", "Sturm"]),
         ]
         return Lesson(
@@ -711,7 +711,7 @@ struct ItalianContent {
             level: .a1,
             category: .weather,
             exercises: exercises,
-            introText: "Das Wetter ist für Radreisende besonders wichtig. „Piove" (Es regnet) kann über eine Etappe entscheiden — und in Italien ändert sich das Wetter schnell."
+            introText: "Das Wetter ist für Radreisende besonders wichtig. 'Piove' (Es regnet) kann über eine Etappe entscheiden — und in Italien ändert sich das Wetter schnell."
         )
     }
 
@@ -737,7 +737,7 @@ struct ItalianContent {
             level: .a0,
             category: .emergency,
             exercises: exercises,
-            introText: "Diese Sätze hoffentlich nie brauchen — aber auswendig kennen! Notruf in Italien: 112. „Aiuto!" und „Ho bisogno di un medico" können Leben retten."
+            introText: "Diese Sätze hoffentlich nie brauchen — aber auswendig kennen! Notruf in Italien: 112. 'Aiuto!' und 'Ho bisogno di un medico' können Leben retten."
         )
     }
 
