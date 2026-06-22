@@ -33,5 +33,6 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.linguavelo.app
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": arm64
     scheme:
       testTargets: []
