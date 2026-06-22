@@ -5,6 +5,13 @@ struct LessonsListView: View {
     @State private var selectedLesson: Lesson?
     @State private var showSession = false
 
+    private var previousLesson: Lesson? {
+        guard let sel = selectedLesson,
+              let idx = appState.lessons.firstIndex(where: { $0.id == sel.id }),
+              idx > 0 else { return nil }
+        return appState.lessons[idx - 1]
+    }
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -12,7 +19,6 @@ struct LessonsListView: View {
 
                 ScrollView {
                     VStack(spacing: AppTheme.Spacing.lg) {
-                        // By category
                         ForEach(VocabCategory.allCases, id: \.self) { cat in
                             let filtered = appState.lessons.filter { $0.category == cat }
                             if !filtered.isEmpty {
@@ -33,7 +39,7 @@ struct LessonsListView: View {
         }
         .sheet(isPresented: $showSession) {
             if let lesson = selectedLesson {
-                LearningSessionView(lesson: lesson, mode: .stationary)
+                TutorSessionView(lesson: lesson, previousLesson: previousLesson)
             }
         }
     }

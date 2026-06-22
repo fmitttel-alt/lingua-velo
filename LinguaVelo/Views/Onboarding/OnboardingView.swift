@@ -81,15 +81,11 @@ struct WelcomeStep: View {
 
                 // Logo
                 VStack(spacing: AppTheme.Spacing.md) {
-                    ZStack {
-                        Circle()
-                            .fill(AppTheme.Colors.salmon.opacity(0.15))
-                            .frame(width: 120, height: 120)
-                        Image(systemName: "bicycle")
-                            .font(.system(size: 52, weight: .light))
-                            .foregroundColor(AppTheme.Colors.salmon)
-                    }
-                    .glow(AppTheme.Colors.salmon, radius: 20)
+                    Image("cycling_hero")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: 200)
+                        .glow(AppTheme.Colors.salmon, radius: 20)
 
                     Text("Lingua Velo")
                         .font(.system(size: 42, weight: .bold, design: .rounded))

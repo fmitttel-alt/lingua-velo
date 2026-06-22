@@ -26,7 +26,9 @@ struct DashboardView: View {
         }
         .sheet(isPresented: $showingSession) {
             if let lesson = quickLesson {
-                LearningSessionView(lesson: lesson, mode: .stationary)
+                let idx = appState.lessons.firstIndex(where: { $0.id == lesson.id }) ?? 0
+                let prev = idx > 0 ? appState.lessons[idx - 1] : nil
+                TutorSessionView(lesson: lesson, previousLesson: prev)
             }
         }
     }

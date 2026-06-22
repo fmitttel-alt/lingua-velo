@@ -14,7 +14,7 @@ enum Config {
     static let wakeWordPrefix = "senti"
 
     // MARK: ElevenLabs
-    static let elevenLabsAPIKey = ProcessInfo.processInfo.environment["ELEVENLABS_API_KEY"] ?? "YOUR_ELEVENLABS_API_KEY"
+    static let elevenLabsAPIKey = ProcessInfo.processInfo.environment["ELEVENLABS_API_KEY"] ?? "sk_eb7b603e726b932e221a48693e7fe51c5569cf521ede76ab"
 
     // Voice IDs — Italian voices from ElevenLabs voice library
     enum VoiceIDs {
