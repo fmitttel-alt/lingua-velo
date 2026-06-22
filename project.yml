@@ -16,7 +16,7 @@ settings:
     SWIFT_STRICT_CONCURRENCY: complete
     ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES: YES
     CODE_SIGN_STYLE: Automatic
-    DEVELOPMENT_TEAM: ""   # Fill in your Apple Developer Team ID
+    DEVELOPMENT_TEAM: ""
 
 targets:
   LinguaVelo:
@@ -36,5 +36,7 @@ targets:
         SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
         SUPPORTED_PLATFORMS: iphoneos
         SUPPORTS_MACCATALYST: NO
+        COMPRESS_PNG_FILES: NO
+        ENABLE_ON_DEMAND_RESOURCES: NO
     scheme:
       testTargets: []

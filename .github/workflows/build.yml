@@ -1,4 +1,4 @@
-﻿name: Build Lingua Velo
+name: Build Lingua Velo
 
 on:
   push:
@@ -32,20 +32,6 @@ jobs:
           sed -i '' "s|YOUR_SUPABASE_ANON_KEY|${SUPABASE_ANON_KEY}|g" LinguaVelo/Config.swift
           sed -i '' "s|YOUR_GEMINI_API_KEY|${GEMINI_API_KEY}|g" LinguaVelo/Config.swift
 
-      - name: Create placeholder AppIcon
-        run: |
-          python3 -c "
-          import struct, zlib
-          w, h = 1024, 1024
-          def chunk(t, d):
-              return struct.pack('>I', len(d)) + t + d + struct.pack('>I', zlib.crc32(t + d) & 0xffffffff)
-          ihdr = struct.pack('>IIBBBBB', w, h, 8, 2, 0, 0, 0)
-          row = b'\x00' + b'\x00\x80\xff' * w
-          idat = zlib.compress(row * h)
-          data = b'\x89PNG\r\n\x1a\n' + chunk(b'IHDR', ihdr) + chunk(b'IDAT', idat) + chunk(b'IEND', b'')
-          open('LinguaVelo/Assets.xcassets/AppIcon.appiconset/AppIcon.png', 'wb').write(data)
-          "
-
       - name: Generate Xcode project
         run: xcodegen generate
 
@@ -64,7 +50,8 @@ jobs:
             ASSETCATALOG_COMPILER_APPICON_NAME="" \
             SUPPORTED_PLATFORMS=iphoneos \
             SUPPORTS_MACCATALYST=NO \
-            COMPRESS_PNG_FILES=NO
+            COMPRESS_PNG_FILES=NO \
+            ENABLE_ON_DEMAND_RESOURCES=NO
 
       - name: Export IPA (unsigned)
         run: |
