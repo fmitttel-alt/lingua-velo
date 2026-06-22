@@ -35,7 +35,7 @@ struct MainTabView: View {
                 .tag(Tab.cycling)
                 .tabItem { Label(Tab.cycling.rawValue, systemImage: Tab.cycling.icon) }
 
-            ProgressView()
+            ProgressoDashboardView()
                 .tag(Tab.progress)
                 .tabItem { Label(Tab.progress.rawValue, systemImage: Tab.progress.icon) }
 

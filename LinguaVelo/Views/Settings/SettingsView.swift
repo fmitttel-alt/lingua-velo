@@ -137,7 +137,7 @@ struct AvatarPickerSheet: View {
     }
 }
 
-struct ProgressView: View {
+struct ProgressoDashboardView: View {
     @EnvironmentObject var appState: AppState
     @StateObject private var fsrs = FSRSManager.shared
 
