@@ -716,24 +716,20 @@ struct ItalianContent {
     }
 
     private static func lessonEmergency() -> Lesson {
-        let exercises: [Exercise] = [
-            ex(.listenOnly,
-               "Notfall-Sätze — hoffentlich brauchst du sie nie!\n\nNotruf Italien: 112 (allgemein) / 118 (Krankenwagen)",
-               italian: "In caso di emergenza.",
-               answer: "ok"),
-            mc("„Hilfe!" auf Italienisch?", answer: "Aiuto!", wrong: ["Attenzione!", "Scusi!", "Pronto!"]),
-            repeat_("Aiuto! Ho bisogno di aiuto!", german: "Hilfe! Ich brauche Hilfe!"),
-            mc("„Ich brauche einen Arzt" auf Italienisch?", answer: "Ho bisogno di un medico.", wrong: ["Ho bisogno di aiuto.", "Chiami la polizia.", "Ho una foratura."]),
-            repeat_("Ho bisogno di un medico, per favore!", german: "Ich brauche bitte einen Arzt!"),
-            mc("Die Notrufnummer in Italien ist:", answer: "112", wrong: ["110", "113", "999"]),
-            mc("„Krankenwagen" auf Italienisch?", answer: "l'ambulanza", wrong: ["la polizia", "i pompieri", "il medico"]),
-            repeat_("Chiami un'ambulanza!", german: "Rufen Sie einen Krankenwagen!"),
-            mc("„Hier tut es weh" auf Italienisch?", answer: "Mi fa male qui.", wrong: ["Sono stanco.", "Ho fame.", "Non capisco."]),
-            repeat_("Mi fa male il ginocchio.", german: "Mein Knie tut weh."),
-            repeat_("Sono caduto/a dalla bici.", german: "Ich bin vom Fahrrad gestürzt."),
-            mc("„Polizei" auf Italienisch?", answer: "la polizia", wrong: ["i pompieri", "il medico", "l'ambulanza"]),
-            repeat_("Dov'è l'ospedale più vicino?", german: "Wo ist das nächste Krankenhaus?"),
-        ]
+        var exercises: [Exercise] = []
+        exercises.append(ex(.listenOnly, "Notfall-Sätze — hoffentlich brauchst du sie nie!\n\nNotruf Italien: 112 (allgemein) / 118 (Krankenwagen)", italian: "In caso di emergenza.", answer: "ok"))
+        exercises.append(mc("Wie sagt man Hilfe auf Italienisch?", answer: "Aiuto!", wrong: ["Attenzione!", "Scusi!", "Pronto!"]))
+        exercises.append(repeat_("Aiuto! Ho bisogno di aiuto!", german: "Hilfe! Ich brauche Hilfe!"))
+        exercises.append(mc("Wie sagt man Ich brauche einen Arzt auf Italienisch?", answer: "Ho bisogno di un medico.", wrong: ["Ho bisogno di aiuto.", "Chiami la polizia.", "Ho una foratura."]))
+        exercises.append(repeat_("Ho bisogno di un medico, per favore!", german: "Ich brauche bitte einen Arzt!"))
+        exercises.append(mc("Die Notrufnummer in Italien ist:", answer: "112", wrong: ["110", "113", "999"]))
+        exercises.append(mc("Wie sagt man Krankenwagen auf Italienisch?", answer: "l'ambulanza", wrong: ["la polizia", "i pompieri", "il medico"]))
+        exercises.append(repeat_("Chiami un'ambulanza!", german: "Rufen Sie einen Krankenwagen!"))
+        exercises.append(mc("Wie sagt man Hier tut es weh auf Italienisch?", answer: "Mi fa male qui.", wrong: ["Sono stanco.", "Ho fame.", "Non capisco."]))
+        exercises.append(repeat_("Mi fa male il ginocchio.", german: "Mein Knie tut weh."))
+        exercises.append(repeat_("Sono caduto/a dalla bici.", german: "Ich bin vom Fahrrad gestürzt."))
+        exercises.append(mc("Wie sagt man Polizei auf Italienisch?", answer: "la polizia", wrong: ["i pompieri", "il medico", "l'ambulanza"]))
+        exercises.append(repeat_("Dov'e l'ospedale piu vicino?", german: "Wo ist das nächste Krankenhaus?"))
         return Lesson(
             id: "emergency-1",
             title: "Emergenza!",
