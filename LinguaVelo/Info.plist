@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDisplayName</key>
+    <string>Lingua Velo</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.linguavelo.app</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+
+    <!-- Microphone — required for voice input and wake word -->
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Lingua Velo nutzt das Mikrofon für die Spracherkennung und das Wake-Word „Senti [Name]".</string>
+
+    <!-- Speech Recognition -->
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>Lingua Velo erkennt deine Antworten und transkribiert sie in Echtzeit.</string>
+
+    <!-- Location — for speed detection in cycling mode -->
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Lingua Velo misst deine Geschwindigkeit, um bei hohem Tempo automatisch in den sicheren Zuhör-Modus zu wechseln.</string>
+
+    <!-- Motion — for activity detection -->
+    <key>NSMotionUsageDescription</key>
+    <string>Lingua Velo erkennt, ob du gerade fährst, um den Fahrmodus automatisch anzupassen.</string>
+
+    <!-- Background modes for wake word and audio -->
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>audio</string>
+        <string>location</string>
+    </array>
+
+    <!-- Required device capabilities -->
+    <key>UIRequiredDeviceCapabilities</key>
+    <array>
+        <string>microphone</string>
+        <string>speech-recognition</string>
+    </array>
+
+    <!-- Keep screen on during cycling mode -->
+    <key>UIRequiresFullScreen</key>
+    <true/>
+
+    <!-- Support only portrait on iPhone -->
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+    </array>
+
+    <!-- App Transport Security -->
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <false/>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>api.elevenlabs.io</key>
+            <dict>
+                <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                <false/>
+            </dict>
+            <key>generativelanguage.googleapis.com</key>
+            <dict>
+                <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                <false/>
+            </dict>
+        </dict>
+    </dict>
+
+    <!-- Dark mode preference -->
+    <key>UIUserInterfaceStyle</key>
+    <string>Dark</string>
+</dict>
+</plist>
