@@ -352,19 +352,19 @@ struct CyclingIntroStep: View {
                     icon: "waveform",
                     color: AppTheme.Colors.sage,
                     title: "Wake Word",
-                    body: "Sag \"Senti [Name]\" und dein Tutor hört zu — ohne Knopfdruck."
+                    description: "Sag \"Senti [Name]\" und dein Tutor hört zu — ohne Knopfdruck."
                 )
                 CyclingFeatureCard(
                     icon: "text.bubble.fill",
                     color: AppTheme.Colors.salmon,
                     title: "Live-Transkript",
-                    body: "Alles Gesprochene erscheint als Text auf dem Bildschirm. Groß, kontraststark, aus 50 cm lesbar."
+                    description: "Alles Gesprochene erscheint als Text auf dem Bildschirm. Groß, kontraststark, aus 50 cm lesbar."
                 )
                 CyclingFeatureCard(
                     icon: "speedometer",
                     color: AppTheme.Colors.rose,
                     title: "Automatischer Sicherheitsmodus",
-                    body: "Bei hoher Geschwindigkeit wechselt die App in den Zuhör-Modus. Kein Sprechen nötig."
+                    description: "Bei hoher Geschwindigkeit wechselt die App in den Zuhör-Modus. Kein Sprechen nötig."
                 )
             }
             .padding(.horizontal, AppTheme.Spacing.md)
@@ -380,7 +380,7 @@ struct CyclingFeatureCard: View {
     let icon: String
     let color: Color
     let title: String
-    let body: String
+    let description: String
 
     var body: some View {
         HStack(alignment: .top, spacing: AppTheme.Spacing.md) {
@@ -392,7 +392,7 @@ struct CyclingFeatureCard: View {
                 Text(title)
                     .font(AppTheme.Font.headline)
                     .foregroundColor(AppTheme.Colors.textPrimary)
-                Text(body)
+                Text(description)
                     .font(AppTheme.Font.callout)
                     .foregroundColor(AppTheme.Colors.textMuted)
             }
