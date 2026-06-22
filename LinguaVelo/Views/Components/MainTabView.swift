@@ -2,7 +2,6 @@ import SwiftUI
 
 struct MainTabView: View {
     @State private var selectedTab: Tab = .dashboard
-    @StateObject private var wakeWord = WakeWordDetector()
 
     enum Tab: String, CaseIterable {
         case dashboard = "Oggi"
@@ -46,8 +45,5 @@ struct MainTabView: View {
         }
         .tint(AppTheme.Colors.salmon)
         .background(AppTheme.Colors.background)
-        .environmentObject(wakeWord)
-        .onAppear { wakeWord.start() }
-        .onDisappear { wakeWord.stop() }
     }
 }
