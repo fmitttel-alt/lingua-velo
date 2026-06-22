@@ -32,6 +32,9 @@ jobs:
           sed -i '' "s|YOUR_SUPABASE_ANON_KEY|${SUPABASE_ANON_KEY}|g" LinguaVelo/Config.swift
           sed -i '' "s|YOUR_GEMINI_API_KEY|${GEMINI_API_KEY}|g" LinguaVelo/Config.swift
 
+      - name: Remove Assets.xcassets (Xcode 16.2 actool bug workaround)
+        run: rm -rf LinguaVelo/Assets.xcassets
+
       - name: Generate Xcode project
         run: xcodegen generate
 
