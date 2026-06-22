@@ -75,53 +75,52 @@ struct WelcomeStep: View {
     let onNext: () -> Void
 
     var body: some View {
-        VStack(spacing: AppTheme.Spacing.xl) {
-            Spacer()
+        ScrollView {
+            VStack(spacing: AppTheme.Spacing.xl) {
+                Spacer(minLength: AppTheme.Spacing.xxl)
 
-            // Logo
-            VStack(spacing: AppTheme.Spacing.md) {
-                ZStack {
-                    Circle()
-                        .fill(AppTheme.Colors.salmon.opacity(0.15))
-                        .frame(width: 120, height: 120)
-                    Image(systemName: "bicycle")
-                        .font(.system(size: 52, weight: .light))
-                        .foregroundColor(AppTheme.Colors.salmon)
+                // Logo
+                VStack(spacing: AppTheme.Spacing.md) {
+                    ZStack {
+                        Circle()
+                            .fill(AppTheme.Colors.salmon.opacity(0.15))
+                            .frame(width: 120, height: 120)
+                        Image(systemName: "bicycle")
+                            .font(.system(size: 52, weight: .light))
+                            .foregroundColor(AppTheme.Colors.salmon)
+                    }
+                    .glow(AppTheme.Colors.salmon, radius: 20)
+
+                    Text("Lingua Velo")
+                        .font(.system(size: 42, weight: .bold, design: .rounded))
+                        .foregroundColor(AppTheme.Colors.textPrimary)
+
+                    Text("Italiano per ciclisti")
+                        .font(AppTheme.Font.title2)
+                        .foregroundColor(AppTheme.Colors.sage)
                 }
-                .glow(AppTheme.Colors.salmon, radius: 20)
 
-                Text("Lingua Velo")
-                    .font(.system(size: 42, weight: .bold, design: .rounded))
-                    .foregroundColor(AppTheme.Colors.textPrimary)
+                VStack(spacing: AppTheme.Spacing.md) {
+                    FeaturePill(icon: "waveform", text: "Voice-First — Hände am Lenker")
+                    FeaturePill(icon: "brain.head.profile", text: "Intelligente Wiederholung (FSRS)")
+                    FeaturePill(icon: "map.fill", text: "Reise-Italiano für Radler")
+                }
+                .padding(.horizontal, AppTheme.Spacing.md)
 
-                Text("Italiano per ciclisti")
-                    .font(AppTheme.Font.title2)
-                    .foregroundColor(AppTheme.Colors.sage)
+                Button(action: onNext) {
+                    Text("Cominciamo! — Starten wir!")
+                        .font(AppTheme.Font.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding(AppTheme.Spacing.md)
+                        .background(AppTheme.Colors.salmon)
+                        .foregroundColor(AppTheme.Colors.white)
+                        .cornerRadius(AppTheme.Radius.md)
+                        .glow(AppTheme.Colors.salmon, radius: 10)
+                }
+                .padding(.horizontal, AppTheme.Spacing.md)
+                .padding(.bottom, AppTheme.Spacing.xl)
             }
-
-            Spacer()
-
-            VStack(spacing: AppTheme.Spacing.md) {
-                FeaturePill(icon: "waveform", text: "Voice-First — Hände am Lenker")
-                FeaturePill(icon: "brain.head.profile", text: "Intelligente Wiederholung (FSRS)")
-                FeaturePill(icon: "map.fill", text: "Reise-Italiano für Radler")
-            }
-            .padding(.horizontal, AppTheme.Spacing.md)
-
-            Spacer()
-
-            Button(action: onNext) {
-                Text("Cominciamo! — Starten wir!")
-                    .font(AppTheme.Font.headline)
-                    .frame(maxWidth: .infinity)
-                    .padding(AppTheme.Spacing.md)
-                    .background(AppTheme.Colors.salmon)
-                    .foregroundColor(AppTheme.Colors.white)
-                    .cornerRadius(AppTheme.Radius.md)
-                    .glow(AppTheme.Colors.salmon, radius: 10)
-            }
-            .padding(.horizontal, AppTheme.Spacing.md)
-            .padding(.bottom, AppTheme.Spacing.xl)
+            .frame(minHeight: UIScreen.main.bounds.height - 100)
         }
     }
 }
