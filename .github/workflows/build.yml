@@ -32,8 +32,10 @@ jobs:
           sed -i '' "s|YOUR_SUPABASE_ANON_KEY|${SUPABASE_ANON_KEY}|g" LinguaVelo/Config.swift
           sed -i '' "s|YOUR_GEMINI_API_KEY|${GEMINI_API_KEY}|g" LinguaVelo/Config.swift
 
-      - name: Remove Assets.xcassets (Xcode 16.2 actool bug workaround)
-        run: rm -rf LinguaVelo/Assets.xcassets
+      - name: Save app icon and remove Assets.xcassets (Xcode 16.2 actool bug workaround)
+        run: |
+          cp LinguaVelo/Assets.xcassets/AppIcon.appiconset/AppIcon.png /tmp/AppIcon.png
+          rm -rf LinguaVelo/Assets.xcassets
 
       - name: Generate Xcode project
         run: xcodegen generate
@@ -55,6 +57,11 @@ jobs:
             SUPPORTS_MACCATALYST=NO \
             COMPRESS_PNG_FILES=NO \
             ENABLE_ON_DEMAND_RESOURCES=NO
+
+      - name: Add app icon to bundle
+        run: |
+          APP=build/LinguaVelo.xcarchive/Products/Applications/LinguaVelo.app
+          sips -z 1024 1024 /tmp/AppIcon.png --out "$APP/AppIcon.png"
 
       - name: Export IPA (unsigned)
         run: |

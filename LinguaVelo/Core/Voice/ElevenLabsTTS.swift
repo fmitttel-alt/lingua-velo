@@ -121,7 +121,7 @@ class TutorDialogue {
             return "Tutor-Dialog nicht aktiv. Trage deinen Gemini API Key in Config.swift ein."
         }
 
-        let model = "gemini-2.0-flash"
+        let model = "gemini-2.5-flash"
         let urlString = "https://generativelanguage.googleapis.com/v1beta/models/\(model):generateContent?key=\(Config.geminiAPIKey)"
         let url = URL(string: urlString)!
         var req = URLRequest(url: url)

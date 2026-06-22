@@ -74,5 +74,17 @@
     <!-- Dark mode preference -->
     <key>UIUserInterfaceStyle</key>
     <string>Dark</string>
+
+    <!-- App Icon (direct PNG, bypassing xcassets) -->
+    <key>CFBundleIcons</key>
+    <dict>
+        <key>CFBundlePrimaryIcon</key>
+        <dict>
+            <key>CFBundleIconFiles</key>
+            <array>
+                <string>AppIcon</string>
+            </array>
+        </dict>
+    </dict>
 </dict>
 </plist>
