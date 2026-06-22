@@ -45,7 +45,8 @@ jobs:
             -archivePath build/LinguaVelo.xcarchive \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=NO
+            CODE_SIGNING_ALLOWED=NO \
+            ASSETCATALOG_COMPILER_SKIP_APP_STORE_DEPLOYMENT=YES
 
       - name: Export IPA (unsigned)
         run: |
