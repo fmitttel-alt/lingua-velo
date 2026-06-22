@@ -20,20 +20,45 @@ jobs:
       - name: Install XcodeGen
         run: brew install xcodegen
 
+      - name: Inject API keys into Config.swift
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          sed -i '' "s|YOUR_ELEVENLABS_API_KEY|${ELEVENLABS_API_KEY}|g" LinguaVelo/Config.swift
+          sed -i '' "s|YOUR_SUPABASE_URL|${SUPABASE_URL}|g" LinguaVelo/Config.swift
+          sed -i '' "s|YOUR_SUPABASE_ANON_KEY|${SUPABASE_ANON_KEY}|g" LinguaVelo/Config.swift
+          sed -i '' "s|YOUR_GEMINI_API_KEY|${GEMINI_API_KEY}|g" LinguaVelo/Config.swift
+
       - name: Generate Xcode project
         run: xcodegen generate
 
-      - name: Build (no signing)
+      - name: Build archive (unsigned)
         run: |
-          xcodebuild build \
+          xcodebuild archive \
             -project LinguaVelo.xcodeproj \
             -scheme LinguaVelo \
-            -destination "generic/platform=iOS Simulator" \
-            -configuration Debug \
+            -destination "generic/platform=iOS" \
+            -archivePath build/LinguaVelo.xcarchive \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=NO \
-            | xcpretty || true
+            CODE_SIGNING_ALLOWED=NO
 
-      - name: Build result
-        run: echo "Build completed"
+      - name: Export IPA (unsigned)
+        run: |
+          mkdir -p build/ipa
+          cp -r build/LinguaVelo.xcarchive/Products/Applications/LinguaVelo.app build/ipa/
+          cd build/ipa
+          mkdir Payload
+          mv LinguaVelo.app Payload/
+          zip -r LinguaVelo.ipa Payload
+          rm -rf Payload
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: LinguaVelo-unsigned
+          path: build/ipa/LinguaVelo.ipa
+          retention-days: 30
