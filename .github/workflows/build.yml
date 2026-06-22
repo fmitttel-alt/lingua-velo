@@ -32,6 +32,11 @@ jobs:
           sed -i '' "s|YOUR_SUPABASE_ANON_KEY|${SUPABASE_ANON_KEY}|g" LinguaVelo/Config.swift
           sed -i '' "s|YOUR_GEMINI_API_KEY|${GEMINI_API_KEY}|g" LinguaVelo/Config.swift
 
+      - name: Create placeholder AppIcon
+        run: |
+          sips -z 1024 1024 LinguaVelo/Assets.xcassets/cycling_hero.imageset/cycling_hero.png \
+            --out LinguaVelo/Assets.xcassets/AppIcon.appiconset/AppIcon.png
+
       - name: Generate Xcode project
         run: xcodegen generate
 
