@@ -99,7 +99,7 @@ class TutorSession: ObservableObject {
             messageHistory.append(["role": "user", "parts": [["text": msg]]])
         }
 
-        let model = "gemini-2.0-flash"
+        let model = "gemini-2.5-flash"
         let urlString = "https://generativelanguage.googleapis.com/v1beta/models/\(model):generateContent?key=\(Config.geminiAPIKey)"
         guard let url = URL(string: urlString) else { return fallbackMessage() }
 
